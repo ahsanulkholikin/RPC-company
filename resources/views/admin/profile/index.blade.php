@@ -25,22 +25,27 @@
 
         
 
-        <form action="{{ route('tentang.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('profile.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-lg-6">
 
                     <div class="form-group">
-                        <label for="exampleInputJudul">wa</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Whatsapp</label>
+                        <input type="text" name="wa" class="form-control @error('wa') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter No Whatsapp" value="@if($profile !== null){{ old('wa',$profile->wa) }}@else{{ old('wa') }}@endif">
+                        @error('wa')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
 
-                        walink
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
+                        Whatsapp Link
+                        <input type="text" name="walink" class="form-control @error('walink') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Link Whatsapp" value="@if($profile !== null){{ old('walink',$profile->walink) }}@else{{ old('walink') }}@endif">
+                        @error('walink')
+                        <div class="alert alert-danger mt-2 error invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
 
                     </div>
 
@@ -50,30 +55,41 @@
                     
 
                     <div class="form-group">
-                        <label for="exampleInputJudul">fb</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Facebook</label>
+                        <input type="text" name="fb" class="form-control @error('fb') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Facebook" value="@if($profile !== null){{ old('fb',$profile->fb) }}@else{{ old('fb') }}@endif">
+                        @error('fb')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
 
-                        fblink
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
+                        Facebook Link
+                        <input type="text" name="fblink" class="form-control @error('fblink') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Link Facebook" value="@if($profile !== null){{ old('fblink',$profile->fblink) }}@else{{ old('fblink') }}@endif">
+
+                        @error('fblink')
+                        <div class="alert alert-danger mt-2 error invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
                     
                     
                     <div class="form-group">
-                        <label for="exampleInputJudul">ig</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Instagram</label>
+                        <input type="text" name="ig" class="form-control @error('ig') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Instagram" value="@if($profile !== null){{ old('ig',$profile->ig) }}@else{{ old('ig') }}@endif">
+                        @error('ig')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
                         @enderror
 
-                        iglink
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
+                        Instagram Link
+                        <input type="text" name="iglink" class="form-control @error('iglink') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Link Instagram" value="@if($profile !== null){{ old('iglink',$profile->iglink) }}@else{{ old('iglink') }}@endif">
+                        @error('iglink')
+                        <div class="alert alert-danger mt-2 error invalid-feedback">
+                            {{ $message }}
+                        </div>
+                        @enderror
                     </div>
 
 
@@ -85,9 +101,9 @@
         
         
                     <div class="form-group">
-                        <label for="exampleInputJudul">email</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Email</label>
+                        <input type="text" name="email" class="form-control @error('email') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Email" value="@if($profile !== null){{ old('email',$profile->email) }}@else{{ old('email') }}@endif">
+                        @error('email')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
@@ -95,9 +111,9 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="exampleInputJudul">telp</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Telp</label>
+                        <input type="text" name="telp" class="form-control @error('telp') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter No Telp" value="@if($profile !== null){{ old('telp',$profile->telp) }}@else{{ old('telp') }}@endif">
+                        @error('telp')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
@@ -109,9 +125,9 @@
 
 
                     <div class="form-group">
-                        <label for="exampleInputJudul">alamat</label>
-                        <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="">
-                        @error('judul')
+                        <label for="exampleInputJudul">Alamat</label>
+                        <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Alamat" value="@if($profile !== null){{ old('alamat',$profile->alamat) }}@else{{ old('alamat') }}@endif">
+                        @error('alamat')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
                         </div>
