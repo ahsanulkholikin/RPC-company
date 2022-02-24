@@ -36,6 +36,7 @@ Route::middleware('auth')->group(function () {
     Route::put('/update',$controller.$login.'@update')->name('profile.update');
 
     Route::resource('kontak', KontakController::class);
+    Route::resource('tentang', TentangController::class);
 
 });
 

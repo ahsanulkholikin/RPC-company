@@ -5,19 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Socmed extends Model
+class Tentang extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'wa',
-        'walink',
-        'telp',
-        'email',
-        'fb',
-        'fblink',
-        'ig',
-        'iglink',
-        'alamat',
+        'img',
+        'judul',
+        'desc',
     ];
 }
