@@ -28,7 +28,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputJudul">Judul</label>
-                    <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="@if($tentang !== null) {{ old('judul',$tentang->judul) }} @else {{ old('judul') }} @endif">
+                    <input type="text" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Judul" value="@if($tentang !== null){{ old('judul',$tentang->judul) }}@else{{ old('judul') }}@endif">
                     @error('judul')
                     <div class="alert alert-danger mt-2 error invalid-feedback">
                         {{ $message }}
@@ -48,7 +48,7 @@
 
                 <div class="form-group">
                     <label for="exampleInputDesc">Desc</label>
-                    <input type="text" name="desc" class="form-control @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc" value="@if($tentang !== null) {{ old('desc',$tentang->desc) }} @else {{ old('desc') }} @endif">
+                    <input type="text" name="desc" class="form-control @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc" value="@if($tentang !== null){{ old('desc',$tentang->desc) }}@else{{ old('desc') }}@endif">
                     @error('desc')
                     <div class="alert alert-danger mt-2 error invalid-feedback">
                         {{ $message }}

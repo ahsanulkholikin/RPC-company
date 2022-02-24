@@ -32,7 +32,7 @@ class TentangController extends Controller
                 //hapus old image
                 if ($tentang->img != null) {
                     // $store = public_path('images\tentang\2095251130.jpg');
-                    $del = Storage::disk('local')->delete(public_path('images\tentang\2095251130.jpg'));
+                    $del = unlink("images/tentang/" . $tentang->img);
                     // dd($store);
                 }
                 //upload new image
