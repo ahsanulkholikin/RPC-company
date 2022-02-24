@@ -40,6 +40,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('tentang', TentangController::class);
     Route::resource('profile', ProfileController::class);
     Route::resource('solusi', SolusiController::class);
+    Route::resource('project', ProjectController::class);
 
 });
 
