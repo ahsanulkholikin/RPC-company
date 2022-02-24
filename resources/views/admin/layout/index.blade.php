@@ -111,7 +111,7 @@
                         {{ Auth::user()->email }} <i class="fa fa-user"></i>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="{{ route('profile') }}" class="dropdown-item dropdown-footer">Edit User</a>
+                        <a href="{{ route('user.profile') }}" class="dropdown-item dropdown-footer">Edit User</a>
 
                         <a href="{{ route('logout') }}" style="cursor: pointer" onclick="event.preventDefault();document.getElementById('logout-form').submit();" class="dropdown-item dropdown-footer">Logout</a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

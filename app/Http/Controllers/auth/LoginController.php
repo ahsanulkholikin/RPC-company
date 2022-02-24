@@ -49,7 +49,7 @@ class LoginController extends Controller
     public function profile()
     {
         $profile = Auth::user();
-        return view('admin.profile.index', compact('profile'));
+        return view('auth.profile', compact('profile'));
     }
     public function update(Request $request)
     {
@@ -66,10 +66,10 @@ class LoginController extends Controller
 
         if ($save) {
             //redirect dengan pesan sukses
-            return redirect()->route('profile')->with(['success' => 'Data Berhasil Diupdate!']);
+            return redirect()->route('user.profile')->with(['success' => 'Data Berhasil Diupdate!']);
         } else {
             //redirect dengan pesan error
-            return redirect()->route('profile')->with(['error' => 'Data Gagal Diupdate!']);
+            return redirect()->route('user.profile')->with(['error' => 'Data Gagal Diupdate!']);
         }
     }
 }

@@ -32,11 +32,13 @@ Route::middleware('auth')->group(function () {
     Route::post('logout',$controller.$login.'@logout')->name('logout');
 
     Route::get('/dashboard',$controller.$login.'@dashboard')->name('dashboard');
-    Route::get('/profile',$controller.$login.'@profile')->name('profile');
-    Route::put('/update',$controller.$login.'@update')->name('profile.update');
+
+    Route::get('/user/profile',$controller.$login.'@profile')->name('user.profile');
+    Route::put('/update',$controller.$login.'@update')->name('user.profile.update');
 
     Route::resource('kontak', KontakController::class);
     Route::resource('tentang', TentangController::class);
+    Route::resource('profile', ProfileController::class);
 
 });
 
