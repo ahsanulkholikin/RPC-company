@@ -18,6 +18,8 @@ class CreateSolusisTable extends Migration
             $table->text('img');
             $table->string('judul');
             $table->text('desc');
+            $table->string('judulStrategi');
+            $table->text('imgStrategi');
             $table->text('strategi');
             $table->timestamps();
         });

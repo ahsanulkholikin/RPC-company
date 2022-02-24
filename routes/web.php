@@ -39,6 +39,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('kontak', KontakController::class);
     Route::resource('tentang', TentangController::class);
     Route::resource('profile', ProfileController::class);
+    Route::resource('solusi', SolusiController::class);
 
 });
 

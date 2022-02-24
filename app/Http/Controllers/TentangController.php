@@ -26,6 +26,7 @@ class TentangController extends Controller
         $tentang = Tentang::latest()->first();
         //upload image
         $image = $request->file('img');
+        $new_name = '';
 
         if ($tentang != null) {
             if ($image != null) {

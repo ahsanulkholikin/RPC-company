@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Solusi extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'img',
+        'judul',
+        'desc',
+        'judulStrategi',
+        'imgStrategi',
+        'strategi',
+    ];
 }

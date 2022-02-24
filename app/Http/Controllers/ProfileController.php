@@ -16,15 +16,15 @@ class ProfileController extends Controller
     {
         // dd($request);
         $this->validate($request, [
-            'wa' => 'required',
-            'walink' => 'required',
-            'telp' => 'required',
-            'email' => 'required',
-            'fb' => 'required',
-            'fblink' => 'required',
-            'ig' => 'required',
-            'iglink' => 'required',
-            'alamat' => 'required',
+            'wa'        => 'required|max:255',
+            'walink'    => 'required|max:255',
+            'telp'      => 'required|max:255',
+            'email'     => 'required|max:255',
+            'fb'        => 'required|max:255',
+            'fblink'    => 'required|max:255',
+            'ig'        => 'required|max:255',
+            'iglink'    => 'required|max:255',
+            'alamat'    => 'required',
         ]);
 
         $profile = Profile::latest()->first();
