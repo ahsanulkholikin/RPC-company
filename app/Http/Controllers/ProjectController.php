@@ -32,7 +32,7 @@ class ProjectController extends Controller
         $new_name = '';
 
         if ($image != null) {
-            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $new_name = rand() . '.' . $image->hashName();
             $image->move(public_path('images/project'), $new_name);
         }
         $save = Project::create([
@@ -78,7 +78,7 @@ class ProjectController extends Controller
                 $del = unlink("images/project/" . $project->img);
             }
             //upload new image
-            $new_name = rand() . '.' . $image->getClientOriginalExtension();
+            $new_name = rand() . '.' . $image->hashName();
             $image->move(public_path('images/project'), $new_name);
         } else {
             $new_name = $project->img;

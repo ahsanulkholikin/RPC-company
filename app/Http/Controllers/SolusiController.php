@@ -38,7 +38,7 @@ class SolusiController extends Controller
                     $del = unlink("images/solusi/" . $solusi->img);
                 }
                 //upload new image
-                $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                $new_name = rand() . '.' . $image->hashName();
                 $image->move(public_path('images/solusi'), $new_name);
             } else {
                 $new_name = $solusi->img;
@@ -50,7 +50,7 @@ class SolusiController extends Controller
                     $del = unlink("images/solusi/" . $solusi->imgStrategi);
                 }
                 //upload new image
-                $new_nameS = rand() . '.' . $imageS->getClientOriginalExtension();
+                $new_nameS = rand() . '.' . $imageS->hashName();
                 $imageS->move(public_path('images/solusi'), $new_nameS);
             } else {
                 $new_nameS = $solusi->new_nameS;
@@ -65,11 +65,11 @@ class SolusiController extends Controller
             ]);
         } else {
             if ($image != null) {
-                $new_name = rand() . '.' . $image->getClientOriginalExtension();
+                $new_name = rand() . '.' . $image->hashName();
                 $image->move(public_path('images/solusi'), $new_name);
             }
             if ($imageS != null) {
-                $new_nameS = rand() . '.' . $imageS->getClientOriginalExtension();
+                $new_nameS = rand() . '.' . $imageS->hashName();
                 $imageS->move(public_path('images/solusi'), $new_nameS);
             }
             $save = Solusi::create([
