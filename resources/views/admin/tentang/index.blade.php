@@ -18,7 +18,7 @@
     <!-- /.card-header -->
     <div class="card-body">
         <div class="table-responsive">
-            <div class="alert alert-warning"  role="alert">
+            <div class="alert alert-warning" role="alert">
                 Note : Jika tidak ingin mengganti gambar silahkan kosongkan saja.
             </div>
 
@@ -48,7 +48,9 @@
 
                 <div class="form-group">
                     <label for="exampleInputDesc">Desc</label>
-                    <input type="text" name="desc" class="form-control @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc" value="@if($tentang !== null){{ old('desc',$tentang->desc) }}@else{{ old('desc') }}@endif">
+                    <textarea name="desc" class="summer-data @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc">
+                    @if($tentang !== null){{ old('desc',$tentang->desc) }}@else{{ old('desc') }}@endif
+                    </textarea>
                     @error('desc')
                     <div class="alert alert-danger mt-2 error invalid-feedback">
                         {{ $message }}

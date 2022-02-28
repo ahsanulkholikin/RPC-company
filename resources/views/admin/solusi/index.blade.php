@@ -47,8 +47,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputDesc">Desc</label>
-                    <input type="text" name="desc" class="form-control @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc" value="@if($solusi !== null){{ old('desc',$solusi->desc) }}@else{{ old('desc') }}@endif">
+                    <label for="exampleInputDesc">Deskripsi</label>
+                    <textarea name="desc" class="summer-data @error('desc') is-invalid @enderror" id="exampleInputDesc" aria-describedby="DescHelp" placeholder="Enter Desc" >
+                    @if($solusi !== null){{ old('desc',$solusi->desc) }}@else{{ old('desc') }}@endif
+                    </textarea>
                     @error('desc')
                     <div class="alert alert-danger mt-2 error invalid-feedback">
                         {{ $message }}
@@ -81,8 +83,10 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="exampleInputstrategi">Desc Strategi</label>
-                    <input type="text" name="strategi" class="form-control @error('strategi') is-invalid @enderror" id="exampleInputstrategi" aria-describedby="strategiHelp" placeholder="Enter strategi" value="@if($solusi !== null){{ old('strategi',$solusi->strategi) }}@else{{ old('strategi') }}@endif">
+                    <label for="exampleInputstrategi">Deskripsi Strategi</label>
+                    <textarea name="strategi" class="summer-data @error('strategi') is-invalid @enderror" id="exampleInputstrategi" aria-describedby="strategiHelp" placeholder="Enter strategi" >
+                    @if($solusi !== null){{ old('strategi',$solusi->strategi) }}@else{{ old('strategi') }}@endif
+                    </textarea>
                     @error('strategi')
                     <div class="alert alert-danger mt-2 error invalid-feedback">
                         {{ $message }}

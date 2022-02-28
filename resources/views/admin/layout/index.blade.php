@@ -207,40 +207,76 @@
     <script>
         //message with toastr
         @if(session()->has('success'))
-        
-            toastr.success("{{ session('success') }}", 'BERHASIL!'); 
+
+        toastr.success("{{ session('success') }}", 'BERHASIL!');
 
         @elseif(session()->has('error'))
 
-            toastr.error("{{ session('error') }}", 'GAGAL!'); 
-            
+        toastr.error("{{ session('error') }}", 'GAGAL!');
+
         @endif
     </script>
     <script type="text/javascript">
-    $(document).ready(function (){
-        $('.table-data').DataTable({
-            "language": {
-            "sEmptyTable":   "Tidak ada data",
-            "sProcessing":   "Sedang memproses...",
-            "sLengthMenu":   "Tampilkan _MENU_ data",
-            "sZeroRecords":  "Tidak ditemukan data yang sesuai",
-            "sInfo":         "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
-            "sInfoEmpty":    "Menampilkan 0 sampai 0 dari 0 data",
-            "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
-            "sInfoPostFix":  "",
-            "sSearch":       "Cari:",
-            "sUrl":          "",
-            "oPaginate": {
-                "sFirst":    "Pertama",
-                "sPrevious": "<",
-                "sNext":     ">",
-                "sLast":     "Terakhir"
-            }
-        }
+        $(document).ready(function() {
+            $('.table-data').DataTable({
+                "language": {
+                    "sEmptyTable": "Tidak ada data",
+                    "sProcessing": "Sedang memproses...",
+                    "sLengthMenu": "Tampilkan _MENU_ data",
+                    "sZeroRecords": "Tidak ditemukan data yang sesuai",
+                    "sInfo": "Menampilkan _START_ sampai _END_ dari _TOTAL_ data",
+                    "sInfoEmpty": "Menampilkan 0 sampai 0 dari 0 data",
+                    "sInfoFiltered": "(disaring dari _MAX_ entri keseluruhan)",
+                    "sInfoPostFix": "",
+                    "sSearch": "Cari:",
+                    "sUrl": "",
+                    "oPaginate": {
+                        "sFirst": "Pertama",
+                        "sPrevious": "<",
+                        "sNext": ">",
+                        "sLast": "Terakhir"
+                    }
+                }
+            });
+            // $('.table-data').DataTable();
         });
-        // $('.table-data').DataTable();
-    });
     </script>
+
+    <script type="text/javascript" language="javascript">
+        $('.summer-data').summernote({
+            height: "305px",
+            styleWithSpan: false,
+            toolbar: [
+                ['style', ['bold', 'italic', 'underline', 'clear']],
+                ['font', ['strikethrough', 'superscript', 'subscript']],
+                ['fontsize', ['fontsize']],
+                // ['fontname', ['fontname']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['color', ['color']],
+                ['insert', ['link']],
+                ['view', ['fullscreen', 'codeview', 'help']],
+                // ['insert',['videoAttributes','media','link','hr','']],
+            ]
+        });
+        $('.summer-tanya').summernote();
+        $('.summer-full').summernote({
+            height: "350px",
+            styleWithSpan: false,
+            toolbar: [
+                ['style', ['style']],
+                ['font', ['bold', 'italic', 'underline', 'clear']],
+                ['fontname', ['fontname']],
+                ['color', ['color']],
+                ['para', ['ul', 'ol', 'paragraph']],
+                ['height', ['height']],
+                ['table', ['table']],
+                ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media', 'link', 'hr']],
+                ['view', ['fullscreen', 'codeview']],
+                ['help', ['help']]
+            ]
+        });
+    </script>
+
 </body>
 
 </html>
