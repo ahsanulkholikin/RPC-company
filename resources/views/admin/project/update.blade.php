@@ -17,9 +17,10 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <div class="alert alert-warning"  role="alert">
-                Note : Jika tidak ingin mengganti gambar silahkan kosongkan saja.
-            </div>
+        <div class="alert alert-warning" role="alert">
+            Note : Jika tidak ingin mengganti gambar silahkan kosongkan saja.
+        </div>
+
         <form action="{{ route('projecttt.ngedit',$project->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 
@@ -63,7 +64,7 @@
                 </div>
                 @enderror
             </div>
-            
+
 
 
             <button type="submit" class="btn btn-primary" style="width: 100%;"><i class="fa fa-save"></i> Simpan</button>

@@ -126,7 +126,9 @@
 
                     <div class="form-group">
                         <label for="exampleInputJudul">Alamat</label>
-                        <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Alamat" value="@if($profile !== null){{ old('alamat',$profile->alamat) }}@else{{ old('alamat') }}@endif">
+                        <textarea rows="5" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Alamat">
+                        @if($profile !== null){{ old('alamat',$profile->alamat) }}@else{{ old('alamat') }}@endif
+                        </textarea>
                         @error('alamat')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}
