@@ -2,9 +2,9 @@
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="{{asset('assets')}}/index3.html" class="brand-link">
+            <a href="{{route('dashboard')}}" class="brand-link">
                 <img src="{{asset('assets')}}/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-                <span class="brand-text font-weight-light">AdminLTE 3</span>
+                <span class="brand-text font-weight-light">RPC-Karya</span>
             </a>
 
             <!-- Sidebar -->
@@ -17,7 +17,7 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item menu-open">
+                        <!-- <li class="nav-item menu-open">
                             <a href="{{asset('assets')}}/#" class="nav-link active">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
@@ -45,17 +45,59 @@
                                     </a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a href="{{asset('assets')}}/pages/widgets.html" class="nav-link">
-                                <i class="nav-icon fas fa-th"></i>
+                        </li> -->
+                        <li class="nav-item ">
+                            <a href="/profile" class="nav-link {{Request::is('profile*')?'active':''}}">
+                                <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
-                                    Widgets
-                                    <span class="right badge badge-danger">New</span>
+                                    Web Profile
+                                    <!-- <span class="right badge badge-danger">New</span> -->
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-header">EXAMPLES</li>
+
+                        <li class="nav-item">
+                            <a href="/tentang" class="nav-link {{Request::is('tentang*')?'active':''}}">
+                                <i class="nav-icon fas fa-columns"></i>
+                                <p>
+                                    Tentang
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="/solusi" class="nav-link {{Request::is('solusi*')?'active':''}}">
+                                <i class="nav-icon fas fa-columns"></i>
+                                <p>
+                                    Solusi
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/project" class="nav-link {{Request::is('project*')?'active':''}}">
+                                <i class="nav-icon far fa-image"></i>
+                                <p>
+                                    Proyek
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="/kontak" class="nav-link {{Request::is('kontak*')?'active':''}}">
+                                <i class="nav-icon far fa-envelope"></i>
+                                <p>
+                                    Kontak
+                                    <!-- <span class="right badge badge-danger">New</span> -->
+                                </p>
+                            </a>
+                        </li>
+                        <!-- <li class="nav-header">EXAMPLES</li> -->
 
                     </ul>
                 </nav>

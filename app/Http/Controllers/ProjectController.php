@@ -21,7 +21,7 @@ class ProjectController extends Controller
     {
         dd($request);
         $this->validate($request, [
-            'img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:3048',
+            'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'judul' => 'required|max:255',
             'desSingkat' => 'required',
             'desFull' => 'required',
