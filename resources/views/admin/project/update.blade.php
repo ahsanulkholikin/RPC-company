@@ -17,11 +17,12 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <form action="{{ route('project.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('projecttt.ngedit',$project->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+
             <div class="form-group">
-                <label for="exampleInputjudul1">judul</label>
-                <input type="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputjudul1" aria-describedby="judulHelp" placeholder="Enter Title">
+                <label for="exampleInputjudul1">Judul</label>
+                <input type="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputjudul1" aria-describedby="judulHelp" placeholder="Enter Title" value="{{ old('judul',$project->judul) }}">
                 @error('judul')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}
@@ -31,7 +32,7 @@
 
             <div class="form-group">
                 <label for="exampleInputdesSingkat1">Deskripsi Singkat</label>
-                <input type="text" name="desSingkat" class="form-control @error('desSingkat') is-invalid @enderror" id="exampleInputdesSingkat1" aria-describedby="desSingkatHelp" placeholder="Enter Text">
+                <input type="text" name="desSingkat" class="form-control @error('desSingkat') is-invalid @enderror" id="exampleInputdesSingkat1" aria-describedby="desSingkatHelp" placeholder="Enter Text" value="{{ old('desSingkat',$project->desSingkat) }}">
                 @error('desSingkat')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}
@@ -52,7 +53,7 @@
 
             <div class="form-group">
                 <label for="exampleInputdesFull1">Deskripsi Full</label>
-                <input type="text" name="desFull" class="form-control @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text">
+                <input type="text" name="desFull" class="form-control @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text" value="{{ old('desFull',$project->desFull) }}">
                 @error('desFull')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}

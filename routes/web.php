@@ -42,5 +42,8 @@ Route::middleware('auth')->group(function () {
     Route::resource('solusi', SolusiController::class);
     Route::resource('project', ProjectController::class);
 
+    Route::post('/project/ngedit/{id}','ProjectController@ngedit')->name('projecttt.ngedit');
+    
+
 });
 

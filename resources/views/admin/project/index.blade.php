@@ -13,6 +13,9 @@
             <button type="button" class="btn btn-tool" data-card-widget="collapse">
                 <i class="fas fa-minus"></i>
             </button>
+            <a href="{{route('project.create')}}" class="btn btn-success" title="Tambah">
+                <i class="fas fa-plus"></i>
+            </a>
         </div>
     </div>
     <!-- /.card-header -->
@@ -25,7 +28,7 @@
                         <th>img</th>
                         <th>judul</th>
                         <th>desSingkat</th>
-                        <th>desFull</th>
+                        <!-- <th>desFull</th> -->
                         <th></th>
                     </tr>
                 </thead>
@@ -36,12 +39,13 @@
                         <td>{{$k->img}}</td>
                         <td>{{$k->judul}}</td>
                         <td>{{$k->desSingkat}}</td>
-                        <td>{{$k->desFull}}</td>
+                        <!-- <td>{{$k->desFull}}</td> -->
                         <td>
+                            <a href="{{route('project.update',$k->id)}}" class="btn btn-xs btn-warning" title="Edit"><i class="fas fa-edit"></i></a>
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('project.destroy', $k->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
+                                <button type="submit" class="btn btn-xs btn-danger" title="Hapus"><i class="fas fa-trash"></i></button>
                             </form>
                             <!-- <button class="btn btn-xs btn-danger"> <i class="fa fa-trash"></i></button> -->
                         </td>
