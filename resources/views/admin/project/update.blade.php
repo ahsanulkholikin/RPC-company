@@ -17,6 +17,9 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
+        <div class="alert alert-warning"  role="alert">
+                Note : Jika tidak ingin mengganti gambar silahkan kosongkan saja.
+            </div>
         <form action="{{ route('projecttt.ngedit',$project->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
 

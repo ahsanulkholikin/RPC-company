@@ -15,39 +15,9 @@
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-                        <!-- <li class="nav-item menu-open">
-                            <a href="{{asset('assets')}}/#" class="nav-link active">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Dashboard
-                                    <i class="right fas fa-angle-left"></i>
-                                </p>
-                            </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="{{asset('assets')}}/./index.html" class="nav-link active">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v1</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{asset('assets')}}/./index2.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v2</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{asset('assets')}}/./index3.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Dashboard v3</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li> -->
+
                         <li class="nav-item ">
-                            <a href="/profile" class="nav-link {{Request::is('profile*')?'active':''}}">
+                            <a href="/admin/profile" class="nav-link {{Request::is('admin/profile*')?'active':''}}">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
                                     Web Profile
@@ -57,7 +27,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/tentang" class="nav-link {{Request::is('tentang*')?'active':''}}">
+                            <a href="/admin/tentang" class="nav-link {{Request::is('admin/tentang*')?'active':''}}">
                                 <i class="nav-icon fas fa-columns"></i>
                                 <p>
                                     Tentang
@@ -68,7 +38,7 @@
 
 
                         <li class="nav-item">
-                            <a href="/solusi" class="nav-link {{Request::is('solusi*')?'active':''}}">
+                            <a href="/admin/solusi" class="nav-link {{Request::is('admin/solusi*')?'active':''}}">
                                 <i class="nav-icon fas fa-columns"></i>
                                 <p>
                                     Solusi
@@ -78,7 +48,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="/project" class="nav-link {{Request::is('project*')?'active':''}}">
+                            <a href="/admin/project" class="nav-link {{Request::is('admin/project*')?'active':''}}">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>
                                     Proyek
@@ -89,7 +59,7 @@
 
 
                         <li class="nav-item">
-                            <a href="/kontak" class="nav-link {{Request::is('kontak*')?'active':''}}">
+                            <a href="/admin/kontak" class="nav-link {{Request::is('admin/kontak*')?'active':''}}">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
                                     Kontak

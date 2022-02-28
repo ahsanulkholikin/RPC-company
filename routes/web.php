@@ -31,18 +31,18 @@ Route::middleware('auth')->group(function () {
     
     Route::post('logout',$controller.$login.'@logout')->name('logout');
 
-    Route::get('/dashboard',$controller.$login.'@dashboard')->name('dashboard');
+    Route::get('/admin/dashboard',$controller.$login.'@dashboard')->name('dashboard');
 
-    Route::get('/user/profile',$controller.$login.'@profile')->name('user.profile');
+    Route::get('/admin/user/profile',$controller.$login.'@profile')->name('user.profile');
     Route::put('/update',$controller.$login.'@update')->name('user.profile.update');
 
-    Route::resource('kontak', KontakController::class);
-    Route::resource('tentang', TentangController::class);
-    Route::resource('profile', ProfileController::class);
-    Route::resource('solusi', SolusiController::class);
-    Route::resource('project', ProjectController::class);
+    Route::resource('/admin/kontak', KontakController::class);
+    Route::resource('/admin/tentang', TentangController::class);
+    Route::resource('/admin/profile', ProfileController::class);
+    Route::resource('/admin/solusi', SolusiController::class);
+    Route::resource('/admin/project', ProjectController::class);
 
-    Route::post('/project/ngedit/{id}','ProjectController@ngedit')->name('projecttt.ngedit');
+    Route::post('/admin/project/ngedit/{id}','ProjectController@ngedit')->name('projecttt.ngedit');
     
 
 });
