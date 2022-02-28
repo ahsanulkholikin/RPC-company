@@ -9,7 +9,7 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        $project = Project::orderBy('created_at','DESC')->get();
+        $project = Project::orderBy('created_at', 'DESC')->get();
         return view('admin.project.index', compact('project'));
     }
 
@@ -52,7 +52,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         // $project = Project::find($id);
-        return view('admin.project.update',compact('project'));
+        return view('admin.project.update', compact('project'));
     }
     public function ngedit(Request $request, $id)
     {
@@ -80,7 +80,6 @@ class ProjectController extends Controller
             //upload new image
             $new_name = rand() . '.' . $image->getClientOriginalExtension();
             $image->move(public_path('images/project'), $new_name);
-            
         } else {
             $new_name = $project->img;
         }
@@ -97,10 +96,21 @@ class ProjectController extends Controller
         } else {
             return redirect()->route('project.index')->with(['error' => 'Data Gagal Disimpan!']);
         }
-
     }
     public function destroy($id)
     {
-        //
+        $project = Project::findOrFail($id);
+        if ($project->img != null) {
+            $del = unlink("images/project/" . $project->img);
+        }
+        $project->delete();
+
+        if ($project) {
+            //redirect dengan pesan sukses
+            return redirect()->route('project.index')->with(['success' => 'Data Berhasil Dihapus!']);
+        } else {
+            //redirect dengan pesan error
+            return redirect()->route('project.index')->with(['error' => 'Data Gagal Dihapus!']);
+        }
     }
 }
