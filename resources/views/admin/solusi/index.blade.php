@@ -36,6 +36,12 @@
                     @enderror
                 </div>
 
+                @if($solusi !== null)
+                <div class="form-group">
+                    <img src="{{asset('images/solusi/'.$solusi->img)}}" alt="" class="img-thumbnail" width="30%">
+                </div>
+                @endif
+
                 <div class="form-group">
                     <label for="exampleInputImage">Image</label>
                     <input type="file" name="img" class="form-control @error('img') is-invalid @enderror" id="exampleInputImage" aria-describedby="ImageHelp" placeholder="Enter Image">
@@ -71,6 +77,12 @@
                     @enderror
                 </div>
 
+
+                @if($solusi !== null)
+                <div class="form-group">
+                    <img src="{{asset('images/solusi/'.$solusi->imgStrategi)}}" alt="" class="img-thumbnail" width="30%">
+                </div>
+                @endif
 
                 <div class="form-group">
                     <label for="exampleInputImage">Image Strategi</label>

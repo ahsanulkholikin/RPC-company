@@ -24,10 +24,10 @@
             <table class="table-data table table-border" width="100%">
                 <thead>
                     <tr>
-                        <th>No</th>
-                        <th>img</th>
-                        <th>judul</th>
-                        <th>desSingkat</th>
+                        <th width="5%">No</th>
+                        <th width="15%">Image</th>
+                        <th>Judul</th>
+                        <th>Deskripsi Singkat</th>
                         <!-- <th>desFull</th> -->
                         <th></th>
                     </tr>
@@ -36,7 +36,10 @@
                     @forelse ($project as $k)
                     <tr>
                         <td>{{ $loop->iteration }}</td>
-                        <td>{{$k->img}}</td>
+                        <td>
+                            <img src="{{asset('images/project/'.$k->img)}}" alt="" class="img-thumbnail">
+                            <!-- {{$k->img}} -->
+                        </td>
                         <td>{{$k->judul}}</td>
                         <td>{{$k->desSingkat}}</td>
                         <!-- <td>{{$k->desFull}}</td> -->
