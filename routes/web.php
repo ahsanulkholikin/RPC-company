@@ -14,11 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 $controller = '\App\Http\Controllers';
 $login = '\auth\LoginController';
+$guest = '\GuestController';
 
 Route::get('/login',$controller.$login.'@index')->name('login');
 
@@ -43,7 +44,10 @@ Route::middleware('auth')->group(function () {
     Route::resource('/admin/project', ProjectController::class);
 
     Route::post('/admin/project/ngedit/{id}','ProjectController@ngedit')->name('projecttt.ngedit');
-    
-
 });
+
+Route::get('/',$controller.$guest.'@index')->name('home');
+Route::get('/home', $controller.$guest.'@index')->name('home.i');
+
+Route::post('/kontakk/post', $controller.$guest.'@kontakStore')->name('kontakk.post');
 

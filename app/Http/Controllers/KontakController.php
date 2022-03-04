@@ -34,9 +34,9 @@ class KontakController extends Controller
         ]);
 
         if ($save) {
-            return redirect()->route('kontak.index')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('home')->with(['success' => 'Data Berhasil Disimpan!']);
         } else {
-            return redirect()->route('kontak.index')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('home')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
     public function destroy($id)

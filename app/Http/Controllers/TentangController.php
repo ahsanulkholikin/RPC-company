@@ -28,6 +28,7 @@ class TentangController extends Controller
         $image = $request->file('img');
         $new_name = '';
 
+
         if ($tentang != null) {
             if ($image != null) {
                 //hapus old image
@@ -37,7 +38,7 @@ class TentangController extends Controller
                     // dd($store);
                 }
                 //upload new image
-                $new_name = rand() . '.' . $image->hashName();
+                $new_name = rand() . '.' . $image->getClientOriginalName();
                 $image->move(public_path('images/tentang'), $new_name);
             } else {
                 $new_name = $tentang->img;
@@ -49,7 +50,7 @@ class TentangController extends Controller
             ]);
         } else {
             if ($image != null) {
-                $new_name = rand() . '.' . $image->hashName();
+                $new_name = rand() . '.' . $image->getClientOriginalName();
                 $image->move(public_path('images/tentang'), $new_name);
             }
             $save = Tentang::create([
