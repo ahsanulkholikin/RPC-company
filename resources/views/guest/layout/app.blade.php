@@ -24,13 +24,13 @@
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/fontawesome-all.min.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="{{asset('')}}css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('')}}css/fontawesome-all.min.css" rel="stylesheet">
+    <link href="{{asset('')}}css/swiper.css" rel="stylesheet">
+    <link href="{{asset('')}}css/styles.css" rel="stylesheet">
 
     <!-- Favicon  -->
-    <link rel="icon" href="images/Tambahan/favicon.png">
+    <link rel="icon" href="{{asset('')}}images/Tambahan/favicon.png">
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbarExample">
@@ -40,7 +40,7 @@
         <div class="container">
 
             <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/Tambahan/logobaru_15.png"
+            <a class="navbar-brand logo-image" href="{{route('home')}}"><img src="{{asset('')}}images/Tambahan/logobaru_15.png"
                     alt="alternative"></a>
 
             <!-- Text Logo - Use this if you don't have a graphic logo -->
@@ -81,7 +81,7 @@
 
     <!-- Footer -->
     <div class="footer bg-gray">
-        <img class="decoration-city" src="images/decoration-city.svg" alt="alternative">
+        <img class="decoration-city" src="{{asset('')}}images/decoration-city.svg" alt="alternative">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -140,16 +140,16 @@
 
     <!-- Back To Top Button -->
     <button onclick="topFunction()" id="myBtn">
-        <img src="images/up-arrow.png" alt="alternative">
+        <img src="{{asset('')}}images/up-arrow.png" alt="alternative">
     </button>
     <!-- end of back to top button -->
 
     <!-- Scripts -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
-    <script src="js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+    <script src="{{asset('')}}js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
+    <script src="{{asset('')}}js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
+    <script src="{{asset('')}}js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
+    <script src="{{asset('')}}js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
+    <script src="{{asset('')}}js/scripts.js"></script> <!-- Custom scripts -->
     
 </body>
 
