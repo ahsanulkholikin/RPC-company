@@ -21,7 +21,7 @@
             @csrf
             <div class="form-group">
                 <label for="exampleInputjudul1">judul</label>
-                <input type="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputjudul1" aria-describedby="judulHelp" placeholder="Enter Title">
+                <input type="judul" name="judul" class="form-control @error('judul') is-invalid @enderror" id="exampleInputjudul1" aria-describedby="judulHelp" placeholder="Enter Title" value="{{ old('judul') }}">
                 @error('judul')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}
@@ -31,7 +31,7 @@
 
             <div class="form-group">
                 <label for="exampleInputdesSingkat1">Deskripsi Singkat</label>
-                <input type="text" name="desSingkat" class="form-control @error('desSingkat') is-invalid @enderror" id="exampleInputdesSingkat1" aria-describedby="desSingkatHelp" placeholder="Enter Text">
+                <input type="text" name="desSingkat" class="form-control @error('desSingkat') is-invalid @enderror" id="exampleInputdesSingkat1" aria-describedby="desSingkatHelp" placeholder="Enter Text" value="{{ old('desSingkat') }}">
                 @error('desSingkat')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}
@@ -52,7 +52,9 @@
 
             <div class="form-group">
                 <label for="exampleInputdesFull1">Deskripsi Full</label>
-                <input type="text" name="desFull" class="form-control @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text">
+                <textarea type="text" name="desFull" class="summer-full @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text">
+                {{ old('desFull') }}
+                </textarea>
                 @error('desFull')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}

@@ -209,7 +209,7 @@
         });
         $('.summer-tanya').summernote();
         $('.summer-full').summernote({
-            height: "350px",
+            height: "100vh",
             styleWithSpan: false,
             toolbar: [
                 ['style', ['style']],
@@ -219,7 +219,7 @@
                 ['para', ['ul', 'ol', 'paragraph']],
                 ['height', ['height']],
                 ['table', ['table']],
-                ['insert', ['link', 'picture', 'video', 'videoAttributes', 'media', 'link', 'hr']],
+                ['insert', ['link', 'picture', 'hr']],
                 ['view', ['fullscreen', 'codeview']],
                 ['help', ['help']]
             ]

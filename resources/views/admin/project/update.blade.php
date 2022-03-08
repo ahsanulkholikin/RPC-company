@@ -57,7 +57,10 @@
 
             <div class="form-group">
                 <label for="exampleInputdesFull1">Deskripsi Full</label>
-                <input type="text" name="desFull" class="form-control @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text" value="{{ old('desFull',$project->desFull) }}">
+                <textarea type="text" name="desFull" class="summer-full @error('desFull') is-invalid @enderror" id="exampleInputdesFull1" aria-describedby="desFullHelp" placeholder="Enter Text">
+                {{ old('desFull',$project->desFull) }}
+                </textarea>
+                
                 @error('desFull')
                 <div class="alert alert-danger mt-2 error invalid-feedback">
                     {{ $message }}

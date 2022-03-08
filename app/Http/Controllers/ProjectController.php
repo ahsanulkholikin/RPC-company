@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use Illuminate\Http\Request;
+use Path\To\DOMDocument;
+use Intervention\Image\ImageManagerStatic;
 
 class ProjectController extends Controller
 {
@@ -19,7 +21,7 @@ class ProjectController extends Controller
     }
     public function store(Request $request)
     {
-        dd($request);
+        // dd($request);
         $this->validate($request, [
             'img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:3048',
             'judul' => 'required|max:255',
@@ -28,18 +30,51 @@ class ProjectController extends Controller
         ]);
 
         //upload image
-        $image = $request->file('img');
-        $new_name = '';
+        $imagefileuploaded = $request->file('img');
+        $new_nameimaged = '';
 
-        if ($image != null) {
-            $new_name = rand() . '.' . $image->getClientOriginalName();
-            $image->move(public_path('images/project'), $new_name);
+        if ($imagefileuploaded != null) {
+            $new_nameimaged = rand() . '.' . $imagefileuploaded->getClientOriginalName();
+            $imagefileuploaded->move(public_path('images/project'), $new_nameimaged);
         }
+
+
+        $loc = "images\project\desc";
+        $dom = new \DOMDocument;
+        libxml_use_internal_errors(true);
+        $dom->loadHTML($request->desFull, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NOIMPLIED);
+        libxml_clear_errors();
+        $images = $dom->getElementsByTagName('img');
+        foreach($images as $img){
+            $src = $img->getAttribute('src');
+            if(preg_match('/data:image/', $src)){
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src ,$groups);
+                $mimetype = $groups["mime"];
+                $fileNameContent = uniqid();
+                $fileNameContentRand = substr(md5($fileNameContent),6,6).'_'.time();
+                
+                $filepath = ("$loc/$fileNameContentRand.$mimetype");
+                // dd('asd');
+                $image = ImageManagerStatic::make($src)
+                            // ->resize(1200,1200)
+                            ->encode($mimetype,100)
+                            ->save(public_path($filepath));
+
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src',$new_src);
+                $img->setAttribute('class', 'img-responsive');
+
+            }
+        }
+        // dd($dom->saveHTML());
+
         $save = Project::create([
-            'img' => $new_name,
-            'judul' => $request->judul,
-            'desSingkat' => $request->desSingkat,
-            'desFull' => $request->desFull,
+            'img'           => $new_nameimaged,
+            'judul'         => $request->judul,
+            'desSingkat'    => $request->desSingkat,
+            // 'desFull'       => $request->desFull,
+            'desFull'       => $dom->saveHTML(),
         ]);
 
         if ($save) {
@@ -67,21 +102,50 @@ class ProjectController extends Controller
         $project = Project::findOrFail($id);
 
         //upload image
-        $image = $request->file('img');
+        $imagesss = $request->file('img');
         $new_name = '';
-        // dd($image);
 
-
-        if ($image != null) {
+        if ($imagesss != null) {
             //hapus old image
             if ($project->img != null) {
                 $del = unlink("images/project/" . $project->img);
             }
             //upload new image
-            $new_name = rand() . '.' . $image->getClientOriginalName();
-            $image->move(public_path('images/project'), $new_name);
+            $new_name = rand() . '.' . $imagesss->getClientOriginalName();
+            $imagesss->move(public_path('images/project'), $new_name);
         } else {
             $new_name = $project->img;
+        }
+        // dd($new_name);
+
+
+        $loc = "images\project\desc";
+        $dom = new \DOMDocument;
+        libxml_use_internal_errors(true);
+        $dom->loadHTML($request->desFull, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NOIMPLIED);
+        libxml_clear_errors();
+        $images = $dom->getElementsByTagName('img');
+        foreach($images as $img){
+            $src = $img->getAttribute('src');
+            if(preg_match('/data:image/', $src)){
+                preg_match('/data:image\/(?<mime>.*?)\;/', $src ,$groups);
+                $mimetype = $groups["mime"];
+                $fileNameContent = uniqid();
+                $fileNameContentRand = substr(md5($fileNameContent),6,6).'_'.time();
+                
+                $filepath = ("$loc/$fileNameContentRand.$mimetype");
+                // dd('asd');
+                $image = ImageManagerStatic::make($src)
+                            // ->resize(1200,1200)
+                            ->encode($mimetype,100)
+                            ->save(public_path($filepath));
+
+                $new_src = asset($filepath);
+                $img->removeAttribute('src');
+                $img->setAttribute('src',$new_src);
+                $img->setAttribute('class', 'img-responsive');
+
+            }
         }
 
         $save = $project->update([

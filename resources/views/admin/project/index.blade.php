@@ -42,7 +42,7 @@
                         </td>
                         <td>{{$k->judul}}</td>
                         <td>{{$k->desSingkat}}</td>
-                        <!-- <td>{{$k->desFull}}</td> -->
+                        <!-- <td>{!! $k->desFull !!}</td> -->
                         <td>
                             <a href="{{route('project.update',$k->id)}}" class="btn btn-xs btn-warning" title="Edit"><i class="fas fa-edit"></i></a>
                             <form onsubmit="return confirm('Apakah Anda Yakin ?');" action="{{ route('project.destroy', $k->id) }}" method="POST">
