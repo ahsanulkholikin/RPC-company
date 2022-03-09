@@ -15,6 +15,7 @@
     <meta property="og:title" content="" /> <!-- title shown in the actual shared post -->
     <meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
     <meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
+    
     <meta property="og:url" content="" /> <!-- where do you want your post to link to -->
     <meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
@@ -28,6 +29,8 @@
     <link href="{{asset('')}}css/fontawesome-all.min.css" rel="stylesheet">
     <link href="{{asset('')}}css/swiper.css" rel="stylesheet">
     <link href="{{asset('')}}css/styles.css" rel="stylesheet">
+    <!-- toastr -->
+    <link rel="stylesheet" href="{{asset('assets')}}/plugins/toastr/toastr.min.css">
 
     <!-- Favicon  -->
     <link rel="icon" href="{{asset('')}}images/Tambahan/favicon.png">
@@ -53,6 +56,7 @@
 
             <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav ms-auto navbar-nav-scroll">
+                @if(Request::is('home') || Request::is('/'))
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#header">Tentang kami</a>
                     </li>
@@ -65,10 +69,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#pricing">Rencana Kerja</a>
                     </li>
+                    @else
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{route('home')}}">Tentang kami</a>
+                    </li>
+                    @endif
 
                 </ul>
                 <span class="nav-item">
-                    <a class="btn-solid-sm" href="#contact">Hubungi Kami</a>
+                    <a class="btn-solid-sm" href="{{route('home')}}#contact">Hubungi Kami</a>
                 </span>
             </div> <!-- end of navbar-collapse -->
         </div> <!-- end of container -->
@@ -122,7 +131,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <ul class="list-unstyled li-space-lg p-small">
-                        <li><a href="terms.html">Kebijakan perusahaan</a></li>
+                        <li><a href="{{route('home.term')}}">Kebijakan perusahaan</a></li>
 
                     </ul>
                 </div> <!-- end of col -->
@@ -150,6 +159,24 @@
     <script src="{{asset('')}}js/purecounter.min.js"></script> <!-- Purecounter counter for statistics numbers -->
     <script src="{{asset('')}}js/isotope.pkgd.min.js"></script> <!-- Isotope for filter -->
     <script src="{{asset('')}}js/scripts.js"></script> <!-- Custom scripts -->
+    <!-- jQuery -->
+    <script src="{{asset('assets')}}/plugins/jquery/jquery.min.js"></script>
+    <!-- toastr -->
+    <script src="{{asset('assets')}}/plugins/toastr/toastr.min.js"></script>
+
+    <script>
+        //message with toastr
+        @if(session()->has('success'))
+
+        toastr.success("{{ session('success') }}", 'BERHASIL!');
+        // console.log("{{ session('success') }}");
+
+        @elseif(session()->has('error'))
+
+        toastr.error("{{ session('error') }}", 'GAGAL!');
+
+        @endif
+    </script>
     
 </body>
 

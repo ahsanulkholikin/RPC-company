@@ -19,6 +19,18 @@ class GuestController extends Controller
         $project = Project::latest()->paginate(9);
         return view('guest.home.index',compact('tentang','solusi','profile','project'));
     }
+    public function article($id,$slug)
+    {
+        $project = Project::find($id);
+        $profile = Profile::first();
+
+        return view('guest.article.index',compact('project','profile'));
+    }
+    public function kebijakan()
+    {
+        $profile = Profile::first();
+        return view('guest.term.index',compact('profile'));
+    }
     public function kontakStore(Request $request)
     {
         // dd($request);
@@ -45,4 +57,6 @@ class GuestController extends Controller
             return redirect()->route('home')->with(['error' => 'Data Gagal Disimpan!']);
         }
     }
+    
+    
 }

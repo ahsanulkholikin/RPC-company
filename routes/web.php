@@ -48,6 +48,8 @@ Route::middleware('auth')->group(function () {
 
 Route::get('/',$controller.$guest.'@index')->name('home');
 Route::get('/home', $controller.$guest.'@index')->name('home.i');
+Route::get('/artikel/{id}/{slug}', $controller.$guest.'@article')->name('home.article');
+Route::get('/kebijakan-perusahaan', $controller.$guest.'@kebijakan')->name('home.term');
 
 Route::post('/kontakk/post', $controller.$guest.'@kontakStore')->name('kontakk.post');
 
