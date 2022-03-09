@@ -39,7 +39,7 @@
                         </div>
                         @enderror
 
-                        Whatsapp Link
+                        Whatsapp Link (https://wa.me/62.......)
                         <input type="text" name="walink" class="form-control @error('walink') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Link Whatsapp" value="@if($profile !== null){{ old('walink',$profile->walink) }}@else{{ old('walink') }}@endif">
                         @error('walink')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
@@ -126,9 +126,7 @@
 
                     <div class="form-group">
                         <label for="exampleInputJudul">Alamat</label>
-                        <textarea rows="5" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Alamat">
-                        @if($profile !== null){{ old('alamat',$profile->alamat) }}@else{{ old('alamat') }}@endif
-                        </textarea>
+                        <textarea rows="5" name="alamat" class="form-control @error('alamat') is-invalid @enderror" id="exampleInputJudul" aria-describedby="JudulHelp" placeholder="Enter Alamat">@if($profile !== null){{ old('alamat',$profile->alamat) }}@else{{ old('alamat') }}@endif</textarea>
                         @error('alamat')
                         <div class="alert alert-danger mt-2 error invalid-feedback">
                             {{ $message }}

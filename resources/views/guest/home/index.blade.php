@@ -146,13 +146,13 @@
         <div class="row">
             <div class="col-lg-6 col-xl-7">
                 <div class="image-container">
-                    <img class="img-fluid" src="@if($solusi != null){{asset('images/solusi/'.$solusi->img)}}@else{{asset('images/Tambahan/rumah.png')}}@endif" alt="Solusi CV RPC KARYA Home">
+                    <img class="img-fluid img-100" src="@if($solusi != null  && $solusi->img != null){{asset('images/solusi/'.$solusi->img)}}@else{{asset('images/Tambahan/rumah.png')}}@endif" alt="Solusi CV RPC KARYA Home">
                 </div> <!-- end of image-container -->
             </div> <!-- end of col -->
             <div class="col-lg-6 col-xl-5">
                 <div class="text-container">
-                    <h2>@if($solusi != null){{$solusi->judul}}@else{!!"<span>Solusi tepat untuk</span><br> Kebutuhan konstruksi"!!}@endif</h2>
-                    <p>@if($solusi != null){{$solusi->desc}}@else{!! "CV RPC KARYA siap bekerja sama dengan semua instansi dan seluruh sektor yang terkait di dalam bidang Jasa Konstruksi dan Pemasok Barang baik Swasta maupun Pemerintah dengan penuh tanggung jawab dan saling menguntungkan.
+                    <h2>@if($solusi != null){!! $solusi->judul !!}@else{!! "<span>Solusi tepat untuk</span><br> Kebutuhan konstruksi"!!}@endif</h2>
+                    <p>@if($solusi != null){!! $solusi->desc !!}@else{!! "CV RPC KARYA siap bekerja sama dengan semua instansi dan seluruh sektor yang terkait di dalam bidang Jasa Konstruksi dan Pemasok Barang baik Swasta maupun Pemerintah dengan penuh tanggung jawab dan saling menguntungkan.
                     <p>Perusahaan kami bergerak di bidang Pengadaan Jasa Konstruksi yang meliputi Pembangunan : Gedung Bertingkat, Hunian, Irigasi, Jalan Raya, dan Konstruksi lainya. </p>" !!}@endif
                     </p>
                     <a class="btn-solid-reg" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Strategi
@@ -173,14 +173,14 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 <div class="col-lg-8">
                     <div class="image-container">
-                        <img class="img-fluid" src="@if($solusi != null && $solusi->imgStrategi != null){{asset('images/solusi/'.$solusi->imgStrategi)}}@else{{asset('images/Tambahan/strategy.jpg')}}@endif" alt="Strategi CV RPC KARYA Home">
+                        <img class="img-fluid img-100" src="@if($solusi != null && $solusi->imgStrategi != null){{asset('images/solusi/'.$solusi->imgStrategi)}}@else{{asset('images/Tambahan/strategy.jpg')}}@endif" alt="Strategi CV RPC KARYA Home">
                     </div> <!-- end of image-container -->
                 </div> <!-- end of col -->
                 <div class="col-lg-4">
                     <h3>@if($solusi != null){{$solusi->judulStrategi}}@else{{"STRATEGI PERUSAHAAN"}}@endif</h3>
                     <hr>
                     <p>
-                        @if($solusi != null){{$solusi->strategi}}@else{{'<ul class="list-unstyled li-space-lg">
+                        @if($solusi != null){!! $solusi->strategi !!}@else{!! '<ul class="list-unstyled li-space-lg">
                         <li class="d-flex">
                             <i class="fas fa-chevron-right"></i>
                             <div class="flex-grow-1">Optimalisasi SDM untuk memperluas
@@ -203,7 +203,7 @@
                                 kualitas cara kerja dan hasil kerja.</div>
                         </li>
 
-                    </ul>'}}@endif
+                    </ul>' !!}@endif
                     </p>
 
                     <button type="button" class="btn-outline-reg" data-bs-dismiss="modal">Close</button>
@@ -428,7 +428,7 @@
                         </li>
                         <li><i class="fab fa-whatsapp"></i></i> &nbsp;<a href="@if($profile != null){{$profile->walink}}@else{{'https://wa.me/6281903100766'}}@endif" target="_blank">@if($profile != null){{$profile->wa}}@else{{'+62 8190-3100-766'}}@endif</a>
                         </li>
-                        <li><i class=" fab fa-instagram"></i> &nbsp;<a href="@if($profile != null){{$profile->iglink}}@else{{'https://www.instagram.com/'}}@endif">@if($profile != null){{$profile->ig}}@else{{'arsitekrpc'}}@endif</a>
+                        <li><i class=" fab fa-instagram"></i> &nbsp;<a href="@if($profile != null){{$profile->iglink}}@else{{'https://www.instagram.com/'}}@endif" target="_blank">@if($profile != null){{$profile->ig}}@else{{'arsitekrpc'}}@endif</a>
                         </li>
                     </ul>
                 </div> <!-- end of col -->

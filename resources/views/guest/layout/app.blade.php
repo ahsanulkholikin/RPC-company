@@ -98,7 +98,7 @@
                         yang berwawasan, CV RPC KARYA akan berperan aktif dalam membangun bangsa.</h4>
                     <div class="social-container">
                         <span class="fa-stack">
-                            <a href="@if($profile != null){{$profile->fblink}}@else{{'https://web.facebook.com/'}}@endif" target="_blank">
+                            <a href="@if($profile != null){{ $profile->fblink }}@else{{'https://web.facebook.com/'}}@endif" target="_blank">
                                 <i class=" fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-facebook-f fa-stack-1x"></i>
                             </a>
@@ -106,13 +106,13 @@
 
 
                         <span class="fa-stack">
-                            <a href="@if($profile != null){{$profile->iglink}}@else{{'https://www.instagram.com/'}}@endif" target="_blank">
+                            <a href="@if($profile != null) {{ $profile->iglink }} @else {{'https://www.instagram.com/'}} @endif" target="_blank">
                                 <i class=" fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-instagram fa-stack-1x"></i>
                             </a>
                         </span>
                         <span class="fa-stack">
-                            <a href="@if($profile != null){{$profile->walink}}@else{{'https://wa.me/6281903100766'}}@endif" target="_blank">
+                            <a href="@if($profile != null){{ $profile->walink }}@else{{'https://wa.me/6281903100766'}}@endif" target="_blank">
                                 <i class=" fas fa-circle fa-stack-2x"></i>
                                 <i class="fab fa-whatsapp fa-stack-1x"></i>
                             </a>

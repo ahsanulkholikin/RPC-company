@@ -52,9 +52,9 @@ class GuestController extends Controller
         ]);
 
         if ($save) {
-            return redirect()->route('home')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('home')->with(['success' => 'Data Berhasil Terkirim!']);
         } else {
-            return redirect()->route('home')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('home')->with(['error' => 'Data Gagal Terkirim!']);
         }
     }
     
