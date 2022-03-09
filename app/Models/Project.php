@@ -11,6 +11,7 @@ class Project extends Model
     protected $fillable = [
         'img',
         'judul',
+        'slug',
         'desSingkat',
         'desFull',
     ];

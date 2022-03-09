@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->text('img');
             $table->string('judul');
+            $table->string('slug');
             $table->text('desSingkat');
             $table->longText('desFull');
             $table->timestamps();

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Path\To\DOMDocument;
+use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic;
 
 class ProjectController extends Controller
@@ -72,6 +73,7 @@ class ProjectController extends Controller
         $save = Project::create([
             'img'           => $new_nameimaged,
             'judul'         => $request->judul,
+            'slug'          => Str::slug($request->judul),
             'desSingkat'    => $request->desSingkat,
             // 'desFull'       => $request->desFull,
             'desFull'       => $dom->saveHTML(),
@@ -151,8 +153,9 @@ class ProjectController extends Controller
         $save = $project->update([
             'img' => $new_name,
             'judul' => $request->judul,
+            'slug' => Str::slug($request->judul),
             'desSingkat' => $request->desSingkat,
-            'desFull' => $request->desFull,
+            'desFull' => $dom->saveHTML(),
         ]);
 
         if ($save) {
