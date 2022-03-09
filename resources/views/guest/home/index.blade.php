@@ -435,7 +435,7 @@
             </div> <!-- end of row -->
             <div class="row">
                 <div class="col-lg-6">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6057998020096!2d109.3378292137652!3d-7.397989594662136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559a936f508d9%3A0xe6c04bb54fd647a8!2sSD%20Negeri%202%20Klapasawit!5e0!3m2!1sen!2sid!4v1645280280906!5m2!1sen!2sid" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3956.6027744975977!2d109.33318331477572!3d-7.398326994661895!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6559b0f1e2e74d%3A0xcb66848aaa9f276c!2sCv.%20Rpc%20Karya%20Konstruksi!5e0!3m2!1sen!2sid!4v1646806772311!5m2!1sen!2sid" width="100%" height="550" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
 
                 <div class="col-lg-6">
