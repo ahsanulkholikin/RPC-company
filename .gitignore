@@ -1,5 +1,8 @@
 /node_modules
 /public/hot
+/public/images/project
+/public/images/solusi
+/public/images/tentang
 /public/storage
 /storage/*.key
 /vendor

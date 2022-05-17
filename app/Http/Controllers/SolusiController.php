@@ -53,7 +53,7 @@ class SolusiController extends Controller
                 $new_nameS = rand() . '.' . $imageS->getClientOriginalName();
                 $imageS->move(public_path('images/solusi'), $new_nameS);
             } else {
-                $new_nameS = $solusi->new_nameS;
+                $new_nameS = $solusi->imgStrategi;
             }
             $save = $solusi->update([
                 'img' => $new_name,

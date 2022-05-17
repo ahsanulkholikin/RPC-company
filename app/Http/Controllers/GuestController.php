@@ -21,7 +21,15 @@ class GuestController extends Controller
     }
     public function article($id,$slug)
     {
-        $project = Project::find($id);
+        // $project = Project::find($id);
+        $project = Project::where([
+            ["id","=",$id],
+            ["slug","=",$slug],
+            ])->first();
+
+        if(empty($project)){
+            return abort(404);
+        }
         $profile = Profile::first();
 
         return view('guest.article.index',compact('project','profile'));
